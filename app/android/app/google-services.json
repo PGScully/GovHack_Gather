@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "970558747052",
+    "project_id": "govhack2024",
+    "storage_bucket": "govhack2024.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:970558747052:android:3e6ca4052bbebffb34ca09",
+        "android_client_info": {
+          "package_name": "com.example.govhack2024"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARcZKBQq1ASegcXZOQBAisffLyKZ89GFU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:970558747052:android:e103f406e96f8e2134ca09",
+        "android_client_info": {
+          "package_name": "org.steminists.launceston.govhack2024"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARcZKBQq1ASegcXZOQBAisffLyKZ89GFU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
