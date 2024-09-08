@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:govhack2024/generated/assets.gen.dart';
 import 'package:govhack2024/router/app_router.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -29,6 +30,14 @@ class _HomeScreenState extends State<HomeScreen> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
+            const Gap(32),
+            FractionallySizedBox(
+              widthFactor: 0.667,
+              child: AspectRatio(
+                aspectRatio: 1,
+                child: Assets.images.logoHigh.image(fit: BoxFit.contain),
+              ),
+            ),
             const Gap(32),
             GestureDetector(
               onTap: () => const EventListRoute().go(context),
