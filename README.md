@@ -1,4 +1,4 @@
-# GovHack_Gather
+# Hunter Gatherers
 ## GovHack 2034
 
 We’re team Hunter-Gatherers, from Launceston, and we’re here to tell you about our well-being and connectedness app, Gather.
