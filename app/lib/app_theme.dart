@@ -1,19 +1,19 @@
 import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
 
-abstract class AppTheme {
+final class AppTheme {
   static final FlexSchemeColor _colourSchemeLight = FlexSchemeColor.from(
-    primary: Colors.blue.shade600,
+    primary: Colors.blue,
     brightness: Brightness.light,
   );
 
   static final FlexSchemeColor _colourSchemeDark = FlexSchemeColor.from(
-    primary: Colors.blue.shade400,
+    primary: Colors.blue,
     brightness: Brightness.dark,
   );
 
   static final FlexSchemeData _colorScheme = FlexSchemeData(
-    name: 'GovHack 2024',
+    name: 'Gather',
     description: 'Definition of all colors',
     light: _colourSchemeLight,
     dark: _colourSchemeDark,
