@@ -1,6 +1,6 @@
 # Data Story
  
-The Hunter Gatherers  were inspired by the social connection domain in the ACT’s Wellbeing Framework, our work in this domain could make a difference by examination of data around both social connection and how it improves wellbeing.
+Gather was inspired by the social connection domain in the ACT’s Wellbeing Framework, our work in this domain could make a difference by examining  data around both social connection and how it improves wellbeing.
 
 Gather is an app informed by research and aims to:
 - improve social connection of individuals
@@ -9,6 +9,7 @@ Gather is an app informed by research and aims to:
 
 ACT Wellbeing Framework
 [https://www.act.gov.au/__data/assets/pdf_file/0004/1498198/ACT-wellbeing-framework.pdf](https://www.act.gov.au/__data/assets/pdf_file/0004/1498198/ACT-wellbeing-framework.pdf)
+
 ## Supporting data
 
 We looked at some databases and studies to understand social connection and civic participation and how it might relate to health and wellbeing.
@@ -33,6 +34,7 @@ Mapping Social Cohesion
 
 Loneliness and social connectedness in Australia
 [https://bcec.edu.au/assets/2021/11/139532_BCEC-Stronger-Together-report_WEB.pdf](https://bcec.edu.au/assets/2021/11/139532_BCEC-Stronger-Together-report_WEB.pdf)
+
 ## Data used in App
 
 Internet event databases were used to populate the events part of the app.
@@ -51,6 +53,7 @@ https://www.mycommunitydirectory.com.au/Tasmania/Launceston/Community_Clubs___In
 
 ABS Cultural and Creative Activities
 https://www.abs.gov.au/statistics/people/people-and-communities/cultural-and-creative-activities/latest-release
+
 ## Data collection
 The data collected was determined by the information collected in the ACT Living Well survey
 
