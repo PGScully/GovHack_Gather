@@ -30,8 +30,29 @@ dev_dependencies:
   custom_lint: ^0.5.11
   flutter_lints: ^4.0.0
   go_router_builder: ^2.7.1
+  icons_launcher: ^2.1.7
   riverpod_generator: ^3.0.0-dev.11
   riverpod_lint: ^3.0.0-dev.4
 
 flutter:
   uses-material-design: true
+
+icons_launcher:
+  image_path: "assets/logo/logo_high.png"
+  platforms:
+    android:
+      enable: true
+      adaptive_background_color: "#000000"
+      adaptive_foreground_image: "assets/logo/logo_high.png"
+      # adaptive_round_image: "assets/icon/icon_android_round.png"
+      # adaptive_monochrome_image: "assets/icon/icon_android_mono.png"
+    ios:
+      enable: true
+    linux:
+      enable: false
+    macos:
+      enable: false
+    web:
+      enable: true
+    windows:
+      enable: false

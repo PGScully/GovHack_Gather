@@ -1,0 +1,374 @@
+# Development Commands
+
+Commonly used commands, here for use with the [Runme runs Markdown](https://marketplace.visualstudio.com/items?itemName=stateful.runme) plugin for VSCode.
+
+## Dependency Management
+
+Fetch the latest packages
+
+```sh {"closeTerminalOnSuccess":"false","id":"01HF83FKBWB1YY17E7ZDBQSCE6","interactive":"true","interpreter":"","name":"pub-get"}
+flutter pub get
+
+
+```
+
+Show outdated packages
+
+```sh {"closeTerminalOnSuccess":"false","id":"01HF83FKBWB1YY17E7ZG5RADDW","interactive":"true","name":"pub-outdated"}
+flutter pub outdated
+
+
+```
+
+Upgrade packages; *avoiding* major version changes, and breaking changes (semver)
+
+```sh {"closeTerminalOnSuccess":"false","id":"01HF83FKBWB1YY17E7ZGRV78MY","name":"pub-upgrade"}
+flutter pub upgrade
+
+
+```
+
+Upgrade packages, *including* major version changes, and breaking changes (semver)
+
+```sh {"closeTerminalOnSuccess":"false","id":"01HF83FKBWB1YY17E7ZHWAKKBJ","name":"pub-upgrade-major"}
+flutter pub upgrade --major-versions
+
+
+```
+
+Check for unused packages
+(see [dependency_validator](https://pub.dev/packages/dependency_validator))
+
+```sh {"closeTerminalOnSuccess":"false","id":"01HF83FKBWB1YY17E7ZHWCANSK"}
+dart run dependency_validator
+
+
+```
+
+Show package dependency tree
+
+```sh {"closeTerminalOnSuccess":"false","id":"01HF83FKBWB1YY17E7ZNNJBBF3"}
+dart pub deps --style=compact
+
+
+```
+
+```sh {"closeTerminalOnSuccess":"false","id":"01HF83FKBWB1YY17E7ZS0V98F0"}
+dart pub deps
+
+
+```
+
+## Code Generation
+
+[Build runner](https://pub.dev/packages/build_runner) code generation for packages that use build_runner, e.g. [json_serializable](https://pub.dev/packages/json_serializable), [flutter_gen](https://pub.dev/packages/flutter_gen), etc.
+
+Clean and Generate
+
+```sh {"closeTerminalOnSuccess":"false","id":"01HF83FKBWB1YY17E7ZT14MHAJ","name":"clean-generate"}
+flutter clean
+flutter pub get
+dart run build_runner build --delete-conflicting-outputs
+dart run icons_launcher:create
+
+
+
+```
+
+Rebuild generated files once
+
+```sh {"closeTerminalOnSuccess":"false","id":"01HF83FKBWB1YY17E7ZXHGXRTF"}
+dart run build_runner build --delete-conflicting-outputs
+
+
+```
+
+Automatically rebuild generated files when they change
+
+```sh {"background":"true","closeTerminalOnSuccess":"false","id":"01HF83FKBWB1YY17E7ZZ81Q2FE"}
+dart run build_runner watch --delete-conflicting-outputs
+
+
+```
+
+Launcher Icons via [icons_launcher](https://pub.dev/packages/icons_launcher)
+
+```sh {"closeTerminalOnSuccess":"false","id":"01HF83FKBWB1YY17E800X3TAR0"}
+dart run icons_launcher:create
+
+
+```
+
+[Flutter Native Splash](https://pub.dev/packages/flutter_native_splash)
+
+```sh {"closeTerminalOnSuccess":"false","id":"01HF83FKBWB1YY17E801WXJZBK"}
+dart run flutter_native_splash:create
+
+
+```
+
+[slang](https://pub.dev/packages/slang) translations
+
+```sh {"closeTerminalOnSuccess":"false","id":"01HF83FKBWB1YY17E801ZF0896"}
+dart run slang
+
+
+```
+
+## Code Quality
+
+### Static Analysis
+
+Flutter Analyzer
+
+```sh {"closeTerminalOnSuccess":"false","id":"01HF83FKBWB1YY17E805S9JPC6"}
+flutter analyze lib
+
+
+```
+
+Dart Fix
+
+```sh {"closeTerminalOnSuccess":"false","id":"01HF83FKBWB1YY17E80726331S"}
+dart fix --dry-run
+
+
+```
+
+```sh {"closeTerminalOnSuccess":"false","id":"01HF83FKBWB1YY17E8091APEES"}
+dart fix --apply
+
+
+```
+
+[Riverpod Lint](https://pub.dev/packages/riverpod_lint)
+
+```sh {"closeTerminalOnSuccess":"false","id":"01HF83FKBWB1YY17E80BQFE4ZB"}
+dart run custom_lint
+
+
+```
+
+### Unit and Integration Tests
+
+#### Unit and Widget tests
+
+```sh {"closeTerminalOnSuccess":"false","id":"01HF83FKBWB1YY17E80DX9MBE7"}
+flutter test --coverage --test-randomize-ordering-seed random
+
+
+```
+
+```sh {"closeTerminalOnSuccess":"false","id":"01HF83FKBWB1YY17E80GAG5YZ5"}
+flutter test --test-randomize-ordering-seed random
+
+
+```
+
+#### Integration tests
+
+Note: Integration tests require a device or emulator to be running.
+
+[Patrol](https://patrol.leancode.co/) integration tests
+
+```sh {"closeTerminalOnSuccess":"false","id":"01HF83FKBWB1YY17E80GHPCD6P"}
+patrol test
+
+
+```
+
+Flutter integration tests
+
+```sh {"closeTerminalOnSuccess":"false","id":"01HF83FKBWB1YY17E80JDF8T8M"}
+flutter test integration_test --coverage
+
+
+```
+
+```sh {"closeTerminalOnSuccess":"false","id":"01HF83FKBWB1YY17E80KBXM368"}
+flutter test integration_test
+
+
+```
+
+## Documentation
+
+Generate documentation
+
+```sh {"closeTerminalOnSuccess":"false","id":"01HF83FKBWB1YY17E80N5RYGX0"}
+dart doc
+
+
+```
+
+## Build and Release
+
+### Android
+
+Debug
+
+```sh {"closeTerminalOnSuccess":"false","id":"01HF83FKBWB1YY17E80PV8CZXR"}
+flutter build appbundle --debug
+
+
+```
+
+```sh {"closeTerminalOnSuccess":"false","id":"01HF83FKBWB1YY17E80QSDGEF9"}
+flutter build apk --debug
+
+
+```
+
+Release
+
+```sh {"closeTerminalOnSuccess":"false","id":"01HF83FKBWB1YY17E80R02PRQC"}
+flutter build appbundle --release --obfuscate --split-debug-info=build/app/outputs/symbol/
+
+
+```
+
+```sh {"closeTerminalOnSuccess":"false","id":"01HF83FKBWB1YY17E80TDGMZ2F"}
+flutter build appbundle --release
+
+
+```
+
+### iOS
+
+Note: Mac OS X only
+
+```sh {"closeTerminalOnSuccess":"false","id":"01HF83FKBWB1YY17E80Y4TM4CN"}
+flutter build ios --debug
+
+
+```
+
+```sh {"closeTerminalOnSuccess":"false","id":"01HF83FKBWB1YY17E8110X3ZBB"}
+flutter build ios --release --obfuscate --split-debug-info=build/app/outputs/symbol/
+
+
+```
+
+```sh {"closeTerminalOnSuccess":"false","id":"01HF83FKBWB1YY17E814N8ET4A"}
+flutter build ios --release
+
+
+```
+
+### Linux
+
+Note: Linux only
+
+```sh {"closeTerminalOnSuccess":"false","id":"01HF83FKBWB1YY17E816KFNKYQ"}
+flutter build linux --debug
+
+
+```
+
+```sh {"closeTerminalOnSuccess":"false","id":"01HF83FKBWB1YY17E818DK0K13"}
+flutter build linux --release --obfuscate --split-debug-info=build/app/outputs/symbol/
+
+
+```
+
+```sh {"closeTerminalOnSuccess":"false","id":"01HF83FKBWB1YY17E819EYD0K4"}
+flutter build linux --release
+
+
+```
+
+### MacOS
+
+Note: Mac OS X only
+
+```sh {"closeTerminalOnSuccess":"false","id":"01HF83FKBWB1YY17E81A0H6H1K"}
+flutter build macos --debug
+
+
+```
+
+```sh {"closeTerminalOnSuccess":"false","id":"01HF83FKBWB1YY17E81DCRJT9C"}
+flutter build macos --release --obfuscate --split-debug-info=build/app/outputs/symbol/
+
+
+```
+
+```sh {"closeTerminalOnSuccess":"false","id":"01HF83FKBWB1YY17E81GMMYB7Q"}
+flutter build macos --release
+
+
+```
+
+### Web
+
+```sh {"closeTerminalOnSuccess":"false","id":"01HF83FKBWB1YY17E81MGXGVF8"}
+flutter build web
+
+
+```
+
+```sh {"closeTerminalOnSuccess":"false","id":"01HF83FKBWB1YY17E81R5QJPFF"}
+flutter build web --release
+
+
+```
+
+### Windows
+
+Note: Windows only
+
+```sh {"closeTerminalOnSuccess":"false","id":"01HF83FKBWB1YY17E81VXASMW7"}
+flutter build windows --debug
+
+
+```
+
+```sh {"closeTerminalOnSuccess":"false","id":"01HF83FKBWB1YY17E81Y8QZPXY"}
+flutter build windows --release --obfuscate --split-debug-info=build/app/outputs/symbol/
+
+
+```
+
+```sh {"closeTerminalOnSuccess":"false","id":"01HF83FKBWB1YY17E81Z9DBTT6"}
+flutter build windows --release
+
+
+```
+
+```sh {"closeTerminalOnSuccess":"false","id":"01HF83FKBWB1YY17E821BQ8J4G"}
+dart run msix:create
+
+
+```
+
+## Trouble-Shooting
+
+```sh {"closeTerminalOnSuccess":"false","id":"01HF83FKBWB1YY17E8241838P8"}
+flutter clean
+
+
+```
+
+```sh {"closeTerminalOnSuccess":"false","id":"01HF83FKBWB1YY17E824V7TG9T"}
+flutter doctor
+
+
+```
+
+```sh {"closeTerminalOnSuccess":"false","id":"01HF83FKBWB1YY17E82507NVHN"}
+flutter doctor -v
+
+
+```
+
+```sh {"closeTerminalOnSuccess":"false","id":"01HF83FKBWB1YY17E828X1HA39"}
+dart pub cache repair
+
+
+```
+
+```sh {"closeTerminalOnSuccess":"false","id":"01HF83FKBWB1YY17E82C9J7PD7"}
+dart pub cache clean
+
+
+```
