@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:govhack2024/router/app_router.dart';
 import 'package:govhack2024/ui/event_list/event_list_view_model.dart';
 import 'package:govhack2024/ui/event_list/event_tile.dart';
 
@@ -16,7 +15,6 @@ class EventListScreen extends ConsumerWidget {
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: const Text('Events'),
-
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
