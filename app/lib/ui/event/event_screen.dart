@@ -2,11 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:govhack2024/model/event.dart';
 import 'package:govhack2024/ui/event/event_screen_view_model.dart';
+import 'package:intl/intl.dart';
 
 class EventScreen extends ConsumerWidget {
   const EventScreen({super.key, required this.id});
 
   final String id;
+
+  static final dateFormat = DateFormat('E d MMM');
+  static final timeFormat = DateFormat('k:mm a');
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -34,11 +38,11 @@ class EventScreen extends ConsumerWidget {
                       style: Theme.of(context).textTheme.headlineMedium,
                     ),
                     Text(
-                      'From: ${event.startTime.toIso8601String()}',
+                      'Date: ${dateFormat.format(event.startTime)}',
                       style: Theme.of(context).textTheme.headlineSmall,
-                    ), // TODO(pgs): make pretty
+                    ),
                     Text(
-                      'To: ${event.endTime.toIso8601String()}',
+                      'From: ${timeFormat.format(event.startTime)} to ${timeFormat.format(event.endTime)}',
                       style: Theme.of(context).textTheme.headlineSmall,
                     ),
                     Text(
